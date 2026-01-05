@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* HSL Format: H S% L% */
+  
+  /* Primary Purple Palette - Soft & Premium */
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 262 83% 96%;
+  
+  /* Secondary Pink/Red Palette for Expenses/Negative */
+  --secondary: 339 90% 65%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Neutral Backgrounds */
+  --background: 210 20% 98%; /* Very light cool gray */
+  --foreground: 222 47% 11%;
+  
+  /* Cards & Surface */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  /* Muted / Text */
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  
+  /* Borders */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 262 83% 58%;
+  
+  /* Status Colors */
+  --success: 142 76% 36%;
+  --warning: 48 96% 53%;
+  --destructive: 0 84% 60%;
+  
+  /* Fonts */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  /* Radius */
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Premium Shadow Utilities */
+  .shadow-premium {
+    box-shadow: 0 20px 40px -10px rgba(76, 29, 149, 0.08), 
+                0 0 15px -3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+}
+
+/* Recharts customization */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #e2e8f0;
+}
